@@ -1,0 +1,20 @@
+void quo_init_window(quo_Window* window, int w, int h, bool resizable) {
+	assert(window != NULL);
+
+	window->is_open = true;
+	window->frame_time = 0;
+	window->now_time = 0;
+	window->old_time = 0;
+
+#if defined(QUO_PLATFORM_X11)
+	quo_init_window_x11(window, w, h, resizable);
+#endif
+
+#if defined(QUO_PLATFORM_WINDOWS)
+	quo_init_window_windows(window, w, h, resizable);
+#endif
+
+	quo_load_gl();
+
+	quo_init_input_system();
+}

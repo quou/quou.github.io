@@ -1,0 +1,20 @@
+mat4& mat4::multiply(const mat4& other) {
+	float result[16];
+
+	for (unsigned int row = 0; row < 4; row++) {
+		for (unsigned int col = 0; col < 4; col++) {
+			float sum = 0.0f;
+
+			for (unsigned int e = 0; e < 4; e++) {
+				sum += elements[e + row * 4] *
+					other.elements[col + e * 4];
+			}
+			result[col + row * 4] = sum;
+		}
+	}
+
+	/* Copy the result into the member element array */
+	memcpy(elements, result, 4 * 4 * sizeof(float));
+
+	return *this;
+}

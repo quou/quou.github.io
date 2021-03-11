@@ -1,0 +1,22 @@
+void quo_draw_texture(quo_Renderer* renderer, quo_Texture* texture, quo_Rect src, quo_Rect dest, unsigned long color) {
+	assert(renderer != NULL);
+	assert(texture != NULL);
+
+	quo_Matrix model = quo_identity();
+	model = quo_translate(model, (quo_vec3){dest.x, dest.y, 0});
+	model = quo_scale(model, (quo_vec3){dest.w, dest.h, 1});
+
+	quo_shader_set_matrix(renderer, renderer->sprite_shader, "model", model);
+	quo_shader_set_matrix(renderer, renderer->sprite_shader, "projection", renderer->projection);
+	quo_shader_set_color(renderer, renderer->sprite_shader, "color", color);
+	quo_shader_set_int(renderer, renderer->sprite_shader, "use_tex", 1);
+	quo_shader_set_vec2(renderer, renderer->sprite_shader, "image_size", texture->width, texture->height);
+	quo_shader_set_vec4(renderer, renderer->sprite_shader, "source_rect", src.x, src.y, src.w, src.h);
+
+	quo_bind_texture(texture, 0);
+	quo_shader_set_int(renderer, renderer->sprite_shader, "tex", 0);
+
+	glBindVertexArray(renderer->quad_va);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glBindVertexArray(0);
+}

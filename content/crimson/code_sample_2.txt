@@ -1,0 +1,32 @@
+std::stringstream stream;
+stream << source;
+
+enum class ShaderType {
+	NONE = -1,
+	VERTEX = 0,
+	PIXEL = 1,
+};
+
+std::string line;
+std::stringstream ss[2];
+ShaderType currentType = ShaderType::NONE;
+while (std::getline(stream, line)) {
+
+	/* Find the shader tag and check which kind of shader it's suggesting. If it's a vertex shader,
+	 * change the current type to be ShaderType::VERTEX. Same for ShaderType::PIXEL, only it checks
+	 * the fragment shader */
+	if (line.find("#shader") != std::string::npos) {
+		if (line.find("vertex") != std::string::npos) {
+			currentType = ShaderType::VERTEX;
+		} else if (line.find("pixel") != std::string::npos) {
+			currentType = ShaderType::PIXEL;
+		}
+	} else {
+		/* Add the line to the appropriate shader string stream */
+		if ((int)currentType == -1) { continue; }
+		ss[(int)currentType] << line << "\n";
+	}
+}
+
+/* Return the two new shaders */
+return ShaderSource{ss[0].str(), ss[1].str()};

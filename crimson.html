@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>George Lamb</title>
+
+		<style>
+			object {
+				background-color: aliceblue;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -22,6 +28,7 @@
 			<li>3D rendering</li>
 			<li>Simple level editor, with serialisation</li>
 			<li>System of entities and components</li>
+			<li>Entity parenting</li>
 		</ul>
 
 		<br/>
@@ -30,11 +37,23 @@
 			<li><a href="content/crimson/editor_penguins.zip">editor_penguins.zip</a> - x64 GNU/Linux editor executable, <code>imgui.ini</code> file and example project</li>
 			<li><a href="content/crimson/editor_bill.zip">editor_bill.zip</a> - x86 Windows executable, <code>imgui.ini</code> file and example project</li>
 			<li><a href="https://github.com/georgelam6/Crimson">Crimson</a> - Main GitHub repository</li>
+			<li><a href="https://github.com/georgelam6/Crimson/tree/master/crimson/src">crimson/src/</a> - Full engine source</li>
 		</ul>
 
 		<br/>
 
 		<p><b>Code samples</b></p>
+		<p><i><code>Crimson::Model::Model</code>: Loading a mesh from an FBX file:</i></p>
+		<div><object width="50%" height="500px" data="content/crimson/code_sample_1.txt"></object></div>
+
+		<p><i><code>Crimson::Shader::Parse</code>: Parsing a single shader file into seperate vertex and pixel/fragment shaders:</i></p>
+		<div><object width="50%" height="500px" data="content/crimson/code_sample_2.txt"></object></div>
+
+		<p><i><code>Crimson::mat4::multiply</code>: Multiplying 4x4 matrices:</i></p>
+		<div><object width="50%" height="330px" data="content/crimson/code_sample_3.txt"></object></div>
+
+		<p><i><code>Crimson::Entity</code>: Entity class:</i></p>
+		<div><object width="50%" height="330px" data="content/crimson/code_sample_4.txt"></object></div>
 
 		<p><b>External depedency credits</b></p>
 		<ul>
@@ -42,7 +61,6 @@
 			<li>Glad by David Herberth</li>
 			<li>GLFW by the GLFW community</li>
 			<li>Dear ImGui by Omar Cornut</li>
-			<li>Physics FS by icculus</li>
 			<li>Physics FS by icculus</li>
 			<li>TinyXML2 by Lee Thomason</li>
 			<li>STB libraries by Sean Barret</li>

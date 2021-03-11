@@ -1,0 +1,74 @@
+func saveGame(var scene):
+	var saveDict = {}
+	var nodesToSave = get_tree().get_nodes_in_group("persistent")
+	for node in nodesToSave:
+		saveDict[node.get_path()] = node.save(scene)
+
+	var saveFile = File.new()
+	saveFile.open(SAVE_PATH, File.WRITE)
+
+	var jstr = JSON.print(saveDict)
+	saveFile.store_line(jstr)
+
+	saveFile.close()
+
+func savePlayerVars():
+	var save = {
+		currentSkin=player_vars.currentSkin
+	}
+
+	var saveDict = {}
+
+	var saveFile = File.new()
+
+	if not saveFile.file_exists(SAVE_PATH) or player_vars.currentScene == "":
+		save["currentScene"] = "res://Scenes/Tutorial.tscn"
+
+		save["hasJetpack"]=player_vars.hasJetpack
+		save["hasGloves"]=player_vars.hasGloves
+		save["currentSkin"]=player_vars.currentSkin
+	else:
+		save = {
+			"currentScene":player_vars.currentScene,
+			"hasJetpack":player_vars.hasJetpack,
+			"hasGloves":player_vars.hasGloves,
+			"currentSkin":player_vars.currentSkin
+		}
+
+	saveDict["/root/World/Guy"] = save
+
+	saveFile.open(SAVE_PATH, File.WRITE)
+
+	var jstr = JSON.print(saveDict)
+	saveFile.store_line(jstr)
+
+	saveFile.close()
+
+func loadGame(var main = false):
+	var saveFile = File.new()
+	if not saveFile.file_exists(SAVE_PATH):
+		return
+
+	saveFile.open(SAVE_PATH, File.READ)
+	var data = {}
+	data = parse_json(saveFile.get_as_text())
+	print(data)
+
+	for nodePath in data.keys():
+		var node = get_node(nodePath)
+
+		for attribute in data[nodePath]:
+			if attribute == "currentScene" and not main:
+				if not get_tree().current_scene.filename == data[nodePath][attribute]:
+					get_tree().change_scene(data[nodePath][attribute])
+
+			if nodePath == '/root/World/Guy' :
+				if not "MainMenu" in get_tree().current_scene.filename:
+					node.ded = false
+
+				if attribute == 'hasJetpack':
+					player_vars.hasJetpack = data[nodePath][attribute]
+				if attribute == 'hasGloves':
+					player_vars.hasGloves = data[nodePath][attribute]
+				if attribute == 'currentSkin':
+					player_vars.currentSkin = data[nodePath][attribute]

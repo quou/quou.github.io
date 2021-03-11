@@ -1,0 +1,73 @@
+static void quo_update_window_events_x11(quo_Window* window) {
+	/* Handle events */
+	XEvent e;
+	while (XPending(window->display)) {
+		XNextEvent(window->display, &e);
+		if (e.type == ClientMessage) {
+			window->is_open = false;
+		} else if (e.type == Expose) {
+			XWindowAttributes gwa;
+			XGetWindowAttributes(window->display, window->window, &gwa);
+			glViewport(0, 0, gwa.width, gwa.height);
+
+			window->width = gwa.width;
+			window->height = gwa.height;
+		} else if (e.type == KeyPress) {
+			if (window->is_focused) {
+				KeySym sym = XLookupKeysym(&e.xkey, 0);
+
+				int key = quo_search_input_table(&window->key_map, sym);
+				i_quo_set_key_held_state(key, true);
+				i_quo_set_key_down_state(key, true);
+			}
+		} else if (e.type == KeyRelease) {
+			if (window->is_focused) {
+				KeySym sym = XLookupKeysym(&e.xkey, 0);
+
+				int key = quo_search_input_table(&window->key_map, sym);
+				i_quo_set_key_held_state(key, false);
+				i_quo_set_key_up_state(key, true);
+			}
+		} else if (e.type == FocusIn) {
+			window->is_focused = true;
+		} else if (e.type == FocusOut) {
+			window->is_focused = false;
+		} else if (e.type == ButtonPress) {
+			switch (e.xbutton.button) {
+				case 1:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_1, true);
+					i_quo_set_mouse_button_down_state(QUO_MOUSE_BUTTON_1, true);
+					break;
+				case 2:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_2, true);
+					i_quo_set_mouse_button_down_state(QUO_MOUSE_BUTTON_2, true);
+					break;
+				case 3:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_3, true);
+					i_quo_set_mouse_button_down_state(QUO_MOUSE_BUTTON_3, true);
+					break;
+				default:
+					break;
+			}
+		} else if (e.type == ButtonRelease) {
+			switch (e.xbutton.button) {
+				case 1:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_1, false);
+					i_quo_set_mouse_button_up_state(QUO_MOUSE_BUTTON_1, true);
+					break;
+				case 2:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_2, false);
+					i_quo_set_mouse_button_up_state(QUO_MOUSE_BUTTON_2, true);
+					break;
+				case 3:
+					i_quo_set_mouse_button_held_state(QUO_MOUSE_BUTTON_3, false);
+					i_quo_set_mouse_button_up_state(QUO_MOUSE_BUTTON_3, true);
+					break;
+				default:
+					break;
+			}
+		} else if (e.type == MotionNotify) {
+			i_quo_update_mouse_pos(e.xmotion.x, e.xmotion.y);
+		}
+	}
+}

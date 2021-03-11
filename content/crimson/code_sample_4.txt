@@ -1,0 +1,93 @@
+class CR_API Entity {
+private:
+	/* Keeps track of whether the entity is destroyed or not */
+	bool m_alive = true;
+
+	/* Component storage */
+	std::vector<ref<Component>> m_components;
+
+	/* Faster way to access component data than searching the vector */
+	ComponentArray m_componentArray;
+	ComponentBitset m_componentBitset;
+
+	unsigned long m_id;
+
+	/* Friendship */
+	friend class Scene;
+	friend class SceneSerialiser;
+public:
+	Scene* m_scene;
+
+	std::string m_name;
+
+	inline unsigned long GetID() const { return m_id; }
+
+	/* Update & Draw methods */
+	void Update(float delta);
+	void Draw(const Camera& camera, Shader* shader = NULL);
+
+	/* Destructor */
+	virtual ~Entity();
+
+	inline void Destroy() { m_alive = false; }
+
+	/* Has the entity got `T` type of component? */
+	template <typename T>
+	bool HasComponent() const {
+		return m_componentBitset[GetComponentTypeID<T>()];
+	}
+
+	/* Return the component of type `T`, provided the entity has it */
+	template <typename T>
+	T* GetComponent() const {
+		if (!HasComponent<T>()) { return NULL; }
+		auto ptr(m_componentArray[GetComponentTypeID<T>()]);
+		return static_cast<T*>(ptr);
+	}
+
+	/* Create a new component of type `T`, call the component's `OnInit` method */
+	template <typename T, typename... TArgs>
+	T* AddComponent(TArgs&&... args) {
+		T* c = AddComponentManualInit<T>(std::forward<TArgs>(args)...);
+		c->OnInit();
+		return c;
+	}
+
+	/* Create a new component of type `T`, but don't call the `OnInit` method*/
+	template <typename T, typename... TArgs>
+	T* AddComponentManualInit(TArgs&&... args) {
+		if (HasComponent<T>()) {
+			return GetComponent<T>();
+		}
+
+		ref<Component> c(new T(std::forward<TArgs>(args)...));
+		c->m_entity = this;
+		m_components.emplace_back(std::move(c));
+
+		m_componentArray[GetComponentTypeID<T>()] = c.get();
+		m_componentBitset[GetComponentTypeID<T>()] = true;
+
+		return static_cast<T*>(c.get());
+	}
+
+	/* Delete a compoennt of type `T`, provided the entity has it. */
+	template <typename T>
+	void RemoveComponent() {
+		if (!HasComponent<T>()) {
+			return;
+		}
+
+		m_componentArray[GetComponentTypeID<T>()]->OnDestroy();
+
+		m_components.erase(
+			std::remove_if(std::begin(m_components), std::end(m_components),
+				[this](const ref<Component>& component) {
+					return m_componentArray[GetComponentTypeID<T>()] == component.get();
+				}),
+			std::end(m_components)
+		);
+
+		m_componentArray[GetComponentTypeID<T>()] = NULL;
+		m_componentBitset[GetComponentTypeID<T>()] = false;
+	}
+};

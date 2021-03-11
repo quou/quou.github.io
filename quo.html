@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>George Lamb</title>
+
+		<style>
+			object {
+				background-color: aliceblue;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -12,9 +18,31 @@
 		<p>This library is being written from scratch in C, using only system dependencies. Currently it can render to a window on both Windows and Linux (X11) using OpenGL, and capture keyboard input.</p>
 
 		<ul>
-			<li><a href="https://raw.githubusercontent.com/georgelam6/quo/master/quo/quo.h">quo.h</a> - The library itself</li>
+			<li><a href="https://raw.githubusercontent.com/georgelam6/quo/master/quo/quo.h">quo.h</a> - The library source itself</li>
 			<li><a href="https://raw.githubusercontent.com/georgelam6/quo/master/sbox/src/sbox.c">sbox.c</a> - C file that I use for testing the library</li>
 			<li><a href="https://github.com/georgelam6/quo">quo</a> - Main GitHub repository</li>
 		</ul>
+
+		<p><b>Code samples</b></p>
+		<p><i>Client code to render a red rectangle on a window and capture keyboard input:</i></p>
+		<div><object width="50%" height="500px" data="content/quo/code_sample_1.txt"></object></div>
+
+		<p><i>Update window events for the X11 (GNU/Linux) platform:</i></p>
+		<div><object width="50%" height="500px" data="content/quo/code_sample_2.txt"></object></div>
+
+		<p><i>Create a system window on the Windows platform:</i></p>
+		<div><object width="50%" height="500px" data="content/quo/code_sample_3.txt"></object></div>
+
+		<p><i>Cross-platform function to create a system window, initialise the input system and load the OpenGL functions:</i></p>
+		<div><object width="50%" height="330px" data="content/quo/code_sample_4.txt"></object></div>
+
+		<p><i>Function to initialise a new renderer. Quo uses a single quad vertex array, that gets rendered multiple times. I hope to add batch rendering in the near future, so that all the quads can be rendered in a single draw-call:</i></p>
+		<div><object width="50%" height="500px" data="content/quo/code_sample_5.txt"></object></div>
+
+		<p><i>Function to draw a textured quad, using a renderer's render data</i></p>
+		<div><object width="50%" height="350px" data="content/quo/code_sample_6.txt"></object></div>
+
+		<p><i>Function to initialise a new renderer. Quo uses a single quad vertex array, that gets rendered multiple times. I hope to add batch rendering in the near future, so that all the quads can be rendered in a single draw-call:</i></p>
+		<div><object width="50%" height="500px" data="content/quo/code_sample_5.txt"></object></div>
 	<body>
 </html>

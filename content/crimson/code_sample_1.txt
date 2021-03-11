@@ -1,0 +1,66 @@
+/* Load the binary from disk */
+std::pair<unsigned char*, unsigned int> fileData = AssetManager::LoadBinary(path);
+
+/* Create a dummy mesh and return if there was an error loading the file */
+if (fileData.first == NULL || fileData.second == 0) {
+	ref<Material> mat(new PhongMaterial("standard", vec3(1.0f), 32.0f));
+	AddMesh(MeshFactory::NewSphereMesh(mat));
+	return;
+}
+
+/* Create the Open FBX scene from the raw binary data */
+ofbx::IScene* scene = ofbx::load((ofbx::u8*)fileData.first, fileData.second, (ofbx::u64)ofbx::LoadFlags::TRIANGULATE);
+
+/* Iterate meshes */
+for (unsigned int i = 0; i < scene->getMeshCount(); i++) {
+	const ofbx::Mesh* mesh = scene->getMesh(i);
+	const ofbx::Geometry* geom = mesh->getGeometry();
+
+	/* To store the vertices and indices that will be used to construct the mesh */
+	std::vector<Vertex> finalVertices;
+	std::vector<unsigned int> finalIndices;
+
+	/* Get the positions from the OpenFBX scene */
+	const ofbx::Vec3* positions = geom->getVertices();
+	for (unsigned int ii = 0; ii < geom->getVertexCount(); ii++) {
+		ofbx::Vec3 pos = positions[ii];
+
+		finalVertices.push_back(Vertex{vec3(pos.x, pos.y, pos.z), vec3(0.0f), vec2(0.0f)});
+	}
+
+	/* Get the normals from the OpenFBX scene */
+	const ofbx::Vec3* normals = geom->getNormals();
+	if (normals) {
+		for (unsigned int ii = 0; ii < geom->getIndexCount(); ii++) {
+			ofbx::Vec3 norm = normals[ii];
+
+			finalVertices[ii].normal = vec3(norm.x, norm.y, norm.z);
+		}
+	}
+
+	/* Get the uvs from the OpenFBX scene */
+	const ofbx::Vec2* uvs = geom->getUVs();
+	if (uvs) {
+		for (unsigned int ii = 0; ii < geom->getIndexCount(); ii++) {
+			ofbx::Vec2 uv = uvs[ii];
+
+			finalVertices[ii].uv = vec2(uv.x, uv.y);
+		}
+	}
+
+	/* Get the indices from the OpenFBX scene */
+	const int* indices = geom->getFaceIndices();
+	for (unsigned int ii = 0; ii < geom->getIndexCount(); ii++) {
+		int index;
+		index = indices[ii]; if (index < 0) index = -(index + 1);
+
+		finalIndices.push_back(index);
+	}
+
+	/* Construct a new Crimson mesh */
+	ref<Material> mat(new PhongMaterial("standard", vec3(1.0f), 32.0f));
+	ref<Mesh> cmesh(new Mesh(finalVertices, finalIndices, mat));
+
+	/* Add the mesh to the current model */
+	AddMesh(cmesh);
+}

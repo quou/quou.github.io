@@ -1,0 +1,39 @@
+void quo_init_renderer(quo_Renderer* renderer, quo_Window* window) {
+	assert(renderer != NULL);
+	assert(window != NULL);
+
+	renderer->shader_count = 0;
+	renderer->window = window;
+
+	for (unsigned int i = 0; i < QUO_MAX_SHADERS; i++) {
+		renderer->shaders[i] = 0;
+	}
+
+	renderer->projection = quo_orthographic(0.0f, window->width, window->height, 0.0f, -1.0f, 1.0f);
+
+	renderer->sprite_shader = quo_create_shader(renderer, g_quad_shader_vertex, g_quad_shader_fragment);
+
+	float vertices[] = {
+		0.0f, 1.0f, 0.0f, 1.0f,
+		1.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 0.0f,
+
+		0.0f, 1.0f, 0.0f, 1.0f,
+		1.0f, 1.0f, 1.0f, 1.0f,
+		1.0f, 0.0f, 1.0f, 0.0f
+	};
+
+	glGenVertexArrays(1, &renderer->quad_va);
+	glGenBuffers(1, &renderer->quad_vb);
+
+	glBindBuffer(GL_ARRAY_BUFFER, renderer->quad_vb);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	glBindVertexArray(renderer->quad_va);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), NULL);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+	quo_bind_shader(renderer, renderer->sprite_shader);
+}
