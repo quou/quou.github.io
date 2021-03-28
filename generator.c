@@ -31,7 +31,7 @@ char* render_markdown(const char* markdown);
 
 int main(int argc, char** argv) {
 	if (argc != 3) {
-		printf("usage: plce [sitefile] [out_dir]\n");
+		printf("usage: generator [sitefile] [out_dir]\n");
 		return ERROR_INCORRECT_ARGS;
 	}
 
@@ -126,7 +126,7 @@ static void parse_paragraph(char* line, char* out) {
 	while (*c != '\0') {
 		char str[1024] = { '\0' };
 
-		if (*c == '[') { /* Parse links */
+		if (*c == '[' && !in_code) { /* Parse links */
 			char link_name[256] = { '\0' };
 			char link_addr[256] = { '\0' };
 			char link_html[2048] = { '\0' };
@@ -149,7 +149,7 @@ static void parse_paragraph(char* line, char* out) {
 			}
 			sprintf(link_html, "<a class=\"link\" href=\"%s\">%s</a>", link_addr, link_name);
 			strcat(str, link_html);
-		} else if (*c == '!' && *(c + 1) == '[') { /* Parse images */
+		} else if (*c == '!' && *(c + 1) == '[' && !in_code) { /* Parse images */
 			c++;
 			char link_name[256] = { '\0' };
 			char link_addr[256] = { '\0' };
@@ -173,7 +173,7 @@ static void parse_paragraph(char* line, char* out) {
 			}
 			sprintf(link_html, "<img class=\"image\" src=\"%s\" alt=\"%s\"></img>", link_addr, link_name);
 			strcat(str, link_html);
-		} else if (*c == '*') { /* Parse bold/italic text */
+		} else if (*c == '*' && !in_code) { /* Parse bold/italic text */
 			c++;
 
 			char tag = 'i';

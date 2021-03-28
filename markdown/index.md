@@ -14,3 +14,5 @@ My favourite language is C, but I'm proficient in C++, C# and Python as well. I 
  - [Untitled game project](game.html) (May 2020) - Game Project for game jam
  - [Legend of Cave](https://georgelam6.itch.io/legend) (Jan 2020) - Simple ASCII roguelike
 
+## Blog
+ - [Using C to Generate HTML from Markdown](c-markdown.html) (Mar 2021) - My experiences writing a simple markdown parser in C
