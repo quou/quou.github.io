@@ -14,7 +14,7 @@ Editor Screenshot:
  - Entity parenting
 
 ## Links
- - [editor_penguins.zip](https://georgelamb.net/content/crimson/editor_penguins.zip) - x64 GNU/Linux editor executable, <code>imgui.ini</code> file and example project
+ - [editor_penguins.zip](https://georgelamb.net/content/crimson/editor_penguins.zip) - x64 GNU/Linux editor executable, `imgui.ini` file and example project
  - [editor_bill.zip](https://georgelamb.net/content/crimson/editor_bill.zip) - x86 Windows executable, `imgui.ini` file and example project
  - [Crimson](https://github.com/georgelam6/Crimson) - Main GitHub repository
  - [Full engine source](https://github.com/georgelam6/Crimson/tree/master/crimson/src)

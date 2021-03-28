@@ -120,6 +120,8 @@ void parse_file_location(char* file, char* path) {
 static void parse_paragraph(char* line, char* out) {
 	const int len = strlen(line);
 
+	bool in_code = false;
+
 	char* c = line;
 	while (*c != '\0') {
 		char str[1024] = { '\0' };
@@ -196,6 +198,15 @@ static void parse_paragraph(char* line, char* out) {
 
 			sprintf(styled_html, "<%c>%s</%c>", tag, styled_text, tag);
 			strcat(str, styled_html);
+		} else if (*c == '`') {
+			if (in_code) {
+				strcat(str, "</code>");
+
+				in_code = false;
+			} else {
+				strcat(str, "<code>");
+				in_code = true;
+			}
 		} else {
 			str[0] = *c;
 			str[1] = '\0';

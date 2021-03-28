@@ -1,7 +1,17 @@
-.content {
-	margin: auto;
-	width: 50%;
-	padding: 10px;
+@media screen and (min-width:480px) {
+	.content {
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.content {
+		margin: auto;
+		width: 90%;
+		padding: 10px;
+	}
 }
 
 body {
@@ -11,4 +21,9 @@ body {
 
 .image {
 	width: 100%;
+}
+
+code {
+	background-color: lightgray;
+	font-size: 13pt;
 }
