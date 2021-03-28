@@ -34,7 +34,7 @@ Parsing links and images is fairly straighforward, once you know how to get the 
 
 It needs to be converted into this HTML form:
 
-`&lt;a href="image-source">amazing link&lt;/a>`
+`&lt;a href="www.address.com">amazing link&lt;/a>`
 
 The way I did this was by iterating each paragraph one character at a time. Yes, this is bad for performance, but since the characters are grouped in memory, the program can make efficient use of cache, so the performance hit isn't too great. When a `[` is encountered, we start recording the text until the next `]` character, giving us the link's display text. After that, we look for the corresponding `(`, which should come exactly after the `]`. Then, we record everything until the next `)`, which gives us the string of where the link should link to. Then, we can easily generate an HTML string via. `sprintf`.
 
@@ -48,4 +48,4 @@ This markdown parser is no where near complete. It doesn't have support for many
  - Block quotes
  - Horizontal rules
 
-You will find that most of these are fairly trival to implement. Others, however, such as tables and nested lists, are much more difficult.
+You will find that most of these are fairly trivial to implement. Others, however, such as tables and nested lists, are much more difficult.
