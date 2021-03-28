@@ -31,7 +31,7 @@
 <p>Parsing links and images is fairly straighforward, once you know how to get the characters between two other characters. The markdown for a link is shown here:</p>
 <p><code>[amazing link](www.address.com)</code></p>
 <p>It needs to be converted into this HTML form:</p>
-<p><code>&lt;a href="image-source">amazing link&lt;/a></code></p>
+<p><code>&lt;a href="www.address.com">amazing link&lt;/a></code></p>
 <p>The way I did this was by iterating each paragraph one character at a time. Yes, this is bad for performance, but since the characters are grouped in memory, the program can make efficient use of cache, so the performance hit isn't too great. When a <code>[</code> is encountered, we start recording the text until the next <code>]</code> character, giving us the link's display text. After that, we look for the corresponding <code>(</code>, which should come exactly after the <code>]</code>. Then, we record everything until the next <code>)</code>, which gives us the string of where the link should link to. Then, we can easily generate an HTML string via. <code>sprintf</code>.</p>
 <p>The algorithm for images is almost identical. The only exception is that there is a <code>!</code> before the first <code>[</code>, and the image's alt-text is between the square brackers, and the the image's source is between the round brackets.</p>
 <h2>Things to consider</h2>
@@ -41,7 +41,7 @@
 <li>Code snippets</li>
 <li>Block quotes</li>
 <li>Horizontal rules</li>
-</ul></ul><p>You will find that most of these are fairly trival to implement. Others, however, such as tables and nested lists, are much more difficult.</p>
+</ul></ul><p>You will find that most of these are fairly trivial to implement. Others, however, such as tables and nested lists, are much more difficult.</p>
 </div>
 </body>
 </html>
