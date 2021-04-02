@@ -4,6 +4,14 @@
 	padding: 10px;
 }
 
+@media screen and (max-width:900px) {
+	.content {
+		margin: auto;
+		width: 90%;
+		padding: 10px;
+	}
+}
+
 body {
 	font-family: monospace;
 	font-size: 14pt;
