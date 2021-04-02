@@ -1,4 +1,3 @@
-
 .content {
 	margin: auto;
 	width: 50%;
@@ -10,6 +9,20 @@ body {
 	font-size: 14pt;
 }
 
+code {
+	background-color: lightgrey;
+}
+
 .image {
 	width: 100%;
+}
+
+.link {
+	color: black;
+	background-color: white;
+}
+
+.link:hover {
+	color: white;
+	background-color: black;
 }

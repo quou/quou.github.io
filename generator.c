@@ -20,7 +20,7 @@ static const char* html_begin = "<!DOCTYPE html>\n"
 "</head>\n"
 "<body>\n"
 "<div class=\"content\">\n"
-"<p><a href=\"index.html\"><-Home Page</a></p>";
+"<p><a class=\"link\" href=\"index.html\"><-Home Page</a></p>";
 
 static const char* html_end = "</div>\n</body>\n"
 "</html>\n";
