@@ -1,12 +1,12 @@
 # Crimson
 
 Hobby game engine written in C++, making use of modern OpenGL standards for 3D rendering
-I'm writing this little engine for fun, and to learn more about graphics programming
+I wrote this little engine for fun, and to learn more about graphics programming
 
 Editor Screenshot:
 ![haha](media/crimson_screenshot_00_full.png)
 
-## Current Features
+## Features
  - AngelScript scripting
  - 3D rendering
  - Simple level editor, with serialisation

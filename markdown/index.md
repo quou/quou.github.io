@@ -8,7 +8,7 @@ My favourite language is C, and I'm proficient in C++, C#, Python and web techno
  - [My GitHub profile](https://github.com/georgelam6)
  - [My games](https://georgelam6.itch.io)
  - [Quo](quo.html) (WIP) - A minimalist, single-header C library, intended for use in game programming
- - [Crimson](crimson.html) (WIP) - Hobby game engine written in C++, making use of modern OpenGL standards
+ - [Crimson](crimson.html) (Apr 2021) - Hobby game engine written in C++, making use of modern OpenGL standards
  - [generator.c](https://raw.githubusercontent.com/georgelam6/georgelam6.github.io/master/generator.c) (Mar 2021) - Static site generator, responsible for creating the HTML for this website.
  - [SLECS](https://github.com/georgelam6/SLECS) (Oct 2020) - Simple entity component system written in C++11
  - [Untitled game project](game.html) (May 2020) - Game Project for game jam
