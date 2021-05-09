@@ -13,6 +13,3 @@ My favourite language is C, and I'm proficient in C++, C#, Python and web techno
  - [SLECS](https://github.com/georgelam6/SLECS) (Oct 2020) - Simple entity component system written in C++11
  - [Untitled game project](game.html) (May 2020) - Game Project for game jam
  - [Legend of Cave](https://georgelam6.itch.io/legend) (Jan 2020) - Simple ASCII roguelike
-
-## Blog
- - [Using C to Generate HTML from Markdown](c-markdown.html) (Mar 2021) - My experiences writing a simple markdown parser in C
