@@ -16,5 +16,5 @@ Editor Screenshot:
 ## Links
  - [editor_penguins.zip](content/crimson/editor_penguins.zip) - x64 GNU/Linux editor executable, `imgui.ini` file and example project
  - [editor_bill.zip](content/crimson/editor_bill.zip) - x86 Windows executable, `imgui.ini` file and example project
- - [Crimson](https://github.com/georgelam6/Crimson) - Main GitHub repository
- - [Full engine source](https://github.com/georgelam6/Crimson/tree/master/crimson/src)
+ - [Crimson](https://github.com/veridisquot/Crimson) - Main GitHub repository
+ - [Full engine source](https://github.com/veridisquot/Crimson/tree/master/crimson/src)
