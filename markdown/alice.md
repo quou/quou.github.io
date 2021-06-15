@@ -3,7 +3,7 @@
 A high performance game engine written in C99 that makes use of Data Oriented Design.
 
 ## Links
- - [alice](https://github.com/veridisquot/quo) - Main GitHub repository
+ - [alice](https://github.com/veridisquot/alice) - Main GitHub repository
  - [test.c](https://raw.githubusercontent.com/veridisquot/alice/master/sbox/scripts/src/test.c) - Test C99 script
 
 ## Current Features
