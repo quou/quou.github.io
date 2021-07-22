@@ -8,7 +8,7 @@ I am often known online by the username "veridis_quo_t".
 
 ## Links
  - [My GitHub profile](https://github.com/veridisquot)
- - [My games](https://georgelam6.itch.io)
+ - [My games](https://veridis-quo-t.itch.io)
  - [Alice](alice.html) (WIP) - High performance game engine written in C99
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
  - [Crimson](crimson.html) (Apr 2021) - Hobby game engine written in C++, making use of modern OpenGL standards
