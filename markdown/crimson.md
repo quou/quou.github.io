@@ -4,7 +4,7 @@ Hobby game engine written in C++, making use of modern OpenGL standards for 3D r
 I wrote this little engine for fun, and to learn more about graphics programming
 
 Editor Screenshot:
-![haha](media/crimson_screenshot_00_full.png)
+![screenshot](media/crimson_screenshot_00_full.png)
 
 ## Features
  - AngelScript scripting
