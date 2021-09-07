@@ -6,7 +6,7 @@ I am often known online by the username "veridis_quo_t".
 
 ## Links
  - [My GitHub profile](https://github.com/veridisquot)
- - [My games](https://veridis-quo-t.itch.io)
+ - [My Itch.io profile](https://veridis-quo-t.itch.io)
  - [Smol](https://veridis-quo-t.itch.io/smol) (Sep 2021) - Tiny Lua-based framework with retro game console-like limitations
  - [Alice](alice.html) (Aug 2021) - High performance game engine written in C99
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
