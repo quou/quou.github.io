@@ -28,6 +28,60 @@ body {
 	}
 }
 
+@media screen and (min-width:2000px) {
+	body {
+		margin: 40px auto;
+		max-width: 1000px;
+		line-height: 1.6;
+		font-size: 18px;
+		color: #444;
+	}
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  height: 100px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.thumb {
+	object-fit: cover;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 code {
 	font-weight: bold;
 	color: #000000;

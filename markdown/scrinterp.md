@@ -1,5 +1,7 @@
 # Scripting Interpreters
 
+![image](media/lsp.png)
+
 *February 23, 2022*
 
 Recently, I took it upon myself to create a scripting language. The goal in mind
