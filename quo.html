@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"></meta>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css"></link>
-<title>George Lamb</title>
+<title>veridis_quo_t</title>
+<style>
+body {
+	margin: 40px auto;
+	max-width: 650px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+}
+
+body {
+	margin: auto;
+	width: 50%;
+	padding: 0 10px;
+}
+
+@media screen and (max-width:900px) {
+	body {
+		margin: auto;
+		width: 90%;
+		padding: 0 10px;
+	}
+}
+
+code {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+
+pre {
+	line-height: 1;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+}
+
+a {
+	color: #444;
+	background-color: white;
+}
+
+a:hover {
+	color: white;
+	background-color: #444;
+}
+</style>
 </head>
 <body>
-<div class="content">
-<p><a class="link" href="index.html"><-Home Page</a></p><h1>Quo</h1>
-<p>Single-header library, intended for use in games. Still in very early development</p>
-<p>This library is being written from scratch in C, using only system dependencies such as Win32 and X11</p>
-<h2>Links</h2>
-<ul><li><a class="link" href="https://raw.githubusercontent.com/veridisquot/quo/master/quo/quo.h">quo.h</a> - The library source itself</li>
-<li><a class="link" href="https://raw.githubusercontent.com/veridisquot/quo/master/sbox/src/sbox.c">sbox.c</a> - C file that I use for testing the library</li>
-<li><a class="link" href="https://github.com/veridisquot/quo">quo</a> - Main GitHub repository</li>
-<li><a class="link" href="https://github.com/veridisquot/quo/tree/master/examples">quo/examples</a> - Usage examples</li>
-</ul><h2>Current Features</h2>
+<h1> Quo</h1>
+
+<p>Single-header library, intended for use in games. Still in very early development
+This library is being written from scratch in C, using only system dependencies such as Win32 and X11</p>
+
+<h2> Links</h2>
+<ul><li><a href="https://raw.githubusercontent.com/veridisquot/quo/master/quo/quo.h">quo.h</a> - The library source itself</li>
+<li><a href="https://raw.githubusercontent.com/veridisquot/quo/master/sbox/src/sbox.c">sbox.c</a> - C file that I use for testing the library</li>
+<li><a href="https://github.com/veridisquot/quo">quo</a> - Main GitHub repository</li>
+<li><a href="https://github.com/veridisquot/quo/tree/master/examples">quo/examples</a> - Usage examples</li></ul>
+
+<h2> Current Features</h2>
 <ul><li>Window management for Windows and Linux (X11)</li>
 <li>2D rendering</li>
 <li>Basic maths</li>
 <li>Input</li>
 <li>Binary serialisation</li>
 <li>3D rendering API</li>
-<li>Offscreen rendering</li>
-</ul></div>
+<li>Offscreen rendering</li></ul>
 </body>
 </html>

@@ -1,6 +1,7 @@
 # Crimson
 
-Hobby game engine written in C++, making use of modern OpenGL standards for 3D rendering
+Hobby game engine written in C++, making use of modern OpenGL standards for 3D rendering.
+
 I wrote this little engine for fun, and to learn more about graphics programming
 
 Editor Screenshot:
