@@ -8,7 +8,7 @@ that would be useful to create a 2-D game, including:
  - Basic Rendering.
  - Resource management.
  - Code hot-reloading for game logic.
- - Windows support.
+ - X11 and Windows support.
  - Physics.
  - Audio.
  - In-game GUI.
