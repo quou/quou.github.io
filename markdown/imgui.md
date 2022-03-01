@@ -14,6 +14,7 @@ It's still a work-in-progress; As of writing it has the following features:
  - Images and image buttons.
  - Ability to override the colour and font of specified elements.
  - Scrolling and clipping.
+ - Dockable windows.
 
 The API looks something like this (called every frame, since it is an immediate-mode
 system):
@@ -43,7 +44,6 @@ The result of this being:
 ![screenshot](media/imgui3.png)
 
 ### Future Goals
- - Dockable windows.
  - "Floating" elements (i.e. elements that are not confined to a window).
  - Text selection and multi-line text input.
  - Copy and paste.
