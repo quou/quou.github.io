@@ -37,6 +37,13 @@ operating system APIs and direct memory management.
 
 <div class="responsive">
 	<div class="gallery">
+		<img class="thumb" src="media/gs_tiled.png">
+		<div class="desc">[gs_tiled](https://github.com/veridisquot/gs_tiled) (Dec 2021)</div>
+	</div>
+</div>
+
+<div class="responsive">
+	<div class="gallery">
 		<img class="thumb" src="media/ecs.png">
 		<div class="desc">[ECS](https://github.com/veridisquot/ecs) (Dec 2021)</div>
 	</div>
@@ -89,6 +96,7 @@ operating system APIs and direct memory management.
 ## Other Projects
 
  - [gen.lua](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/gen.lua) (Feb 2022) - Static site generator, responsible for creating the HTML for this website.
+ - [gs_xml](https://github.com/veridisquot/gs_xml) (Dec 2021) - Simple XML parser using [Gunslinger](https://github.com/veridisquot/gs_xml)
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
  - [generator.c](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/generator.c) (Mar 2021) - Static site generator, used to be responsible for creating the HTML for this website.
 
