@@ -1,6 +1,7 @@
 # Immediate-Mode Graphical User Interface
 ![screnshot](media/imgui.png)
 ![screnshot](media/imgui2.png)
+![screnshot](https://raw.githubusercontent.com/veridisquot/openmv/master/media/003.png)
 
 I'm making this small GUI library to aid in the creation of [my game](openmv.html),
 to use for displaying debug information like FPS, frame time and memory usage.
