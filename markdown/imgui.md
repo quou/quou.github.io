@@ -12,6 +12,7 @@ It's still a work-in-progress; As of writing it has the following features:
  - Layout system using columns.
  - Text input.
  - Buttons.
+ - Toggle switches.
  - Images and image buttons.
  - Ability to override the colour and font of specified elements.
  - Scrolling and clipping.
