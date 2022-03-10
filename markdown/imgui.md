@@ -18,12 +18,13 @@ It's still a work-in-progress; As of writing it has the following features:
  - Ability to override the colour and font of specified elements.
  - Scrolling and clipping.
  - Dockable windows.
+ - "Floating" elements (elements not contained within a window).
 
 The API looks something like this (called every frame, since it is an immediate-mode
 system):
 
 ```
-if (ui_begin_window(ui, "Test Window", make_v2i(0, 0))) {
+if (ui_begin_window(ui, "Test Window", make_v2i(0, 0), null)) {
 	ui_columns(ui, 2, 100);
 
 	if (ui_button(ui, "Button")) {
@@ -47,7 +48,6 @@ The result of this being:
 ![screenshot](media/imgui3.png)
 
 ### Future Goals
- - "Floating" elements (i.e. elements that are not confined to a window).
  - Text selection and multi-line text input.
  - Copy and paste.
  - Drop-down, menu bar, colour picker and list box elements.

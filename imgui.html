@@ -127,13 +127,14 @@ to use for displaying debug information like FPS, frame time and memory usage.</
 <li>Images and image buttons.</li>
 <li>Ability to override the colour and font of specified elements.</li>
 <li>Scrolling and clipping.</li>
-<li>Dockable windows.</li></ul></p>
+<li>Dockable windows.</li>
+<li>"Floating" elements (elements not contained within a window).</li></ul></p>
 
 <p>The API looks something like this (called every frame, since it is an immediate-mode
 system):</p>
 
 <pre><code>
-if (ui_begin_window(ui, "Test Window", make_v2i(0, 0))) {
+if (ui_begin_window(ui, "Test Window", make_v2i(0, 0), null)) {
 	ui_columns(ui, 2, 100);
 
 	if (ui_button(ui, "Button")) {
@@ -157,8 +158,7 @@ if (ui_begin_window(ui, "Test Window", make_v2i(0, 0))) {
 <p><img src="media/imgui3.png" alt="screenshot"/></p>
 
 <h3> Future Goals</h3>
-<ul><li>"Floating" elements (i.e. elements that are not confined to a window).</li>
-<li>Text selection and multi-line text input.</li>
+<ul><li>Text selection and multi-line text input.</li>
 <li>Copy and paste.</li>
 <li>Drop-down, menu bar, colour picker and list box elements.</li></ul>
 
