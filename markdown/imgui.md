@@ -9,6 +9,7 @@ to use for displaying debug information like FPS, frame time and memory usage.
 It's still a work-in-progress; As of writing it has the following features:
  - Windows that can be moved and resized.
  - Text labels.
+ - Text wrapping.
  - Layout system using columns.
  - Text input.
  - Buttons.
