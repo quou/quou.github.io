@@ -97,6 +97,7 @@ operating system APIs and direct memory management.
 
  - [gen.lua](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/gen.lua) (Feb 2022) - Static site generator, responsible for creating the HTML for this website.
  - [gs_xml](https://github.com/veridisquot/gs_xml) (Dec 2021) - Simple XML parser using [Gunslinger](https://github.com/veridisquot/gs_xml)
+ - [sml](https://github.com/veridisquot/sml) (Dec 2021) - Maths library written in Lua that generates C99 code.
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
  - [generator.c](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/generator.c) (Mar 2021) - Static site generator, used to be responsible for creating the HTML for this website.
 
