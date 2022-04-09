@@ -1,7 +1,7 @@
 # Immediate-Mode Graphical User Interface
 ![screnshot](media/imgui.png)
 ![screnshot](media/imgui2.png)
-![screnshot](https://raw.githubusercontent.com/veridisquot/openmv/master/media/003.png)
+![screnshot](https://raw.githubusercontent.com/quou/openmv/master/media/003.png)
 
 I'm making this small GUI library to aid in the creation of [my game](openmv.html),
 to use for displaying debug information like FPS, frame time and memory usage.
@@ -53,6 +53,6 @@ The result of this being:
  - Drop-down, menu bar, colour picker and list box elements.
 
 ## Links
- - [Parent Repository](github.com/veridisquot/openmv)
- - [Source](https://github.com/veridisquot/openmv/blob/master/core/src/imui.c) & [Header](https://github.com/veridisquot/openmv/blob/master/core/src/imui.h)
- - [Testing Sandbox](https://github.com/veridisquot/openmv/blob/master/util/imuitest/src/main.c)
+ - [Parent Repository](github.com/quou/openmv)
+ - [Source](https://github.com/quou/openmv/blob/master/core/src/imui.c) & [Header](https://github.com/quou/openmv/blob/master/core/src/imui.h)
+ - [Testing Sandbox](https://github.com/quou/openmv/blob/master/util/imuitest/src/main.c)

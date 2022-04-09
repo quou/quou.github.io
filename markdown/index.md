@@ -16,14 +16,14 @@ I enjoy working closely with the operating system and hardware; Using
 operating system APIs and direct memory management.
 
 ## Links
- - [My GitHub profile](https://github.com/veridisquot)
- - [My Itch.io profile](https://veridis-quo-t.itch.io)
+ - [My GitHub profile](https://github.com/quou)
+ - [My Itch.io profile](https://quou.itch.io)
 
 ## Projects
 
 <div class="responsive">
 	<div class="gallery">
-		<img class="thumb" src="https://raw.githubusercontent.com/veridisquot/openmv/master/media/001.png">
+		<img class="thumb" src="https://raw.githubusercontent.com/quou/openmv/master/media/001.png">
 		<div class="desc">[OpenMV](openmv.html) (WIP)</div>
 	</div>
 </div>
@@ -38,14 +38,14 @@ operating system APIs and direct memory management.
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/gs_tiled.png">
-		<div class="desc">[gs_tiled](https://github.com/veridisquot/gs_tiled) (Dec 2021)</div>
+		<div class="desc">[gs_tiled](https://github.com/quou/gs_tiled) (Dec 2021)</div>
 	</div>
 </div>
 
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/ecs.png">
-		<div class="desc">[ECS](https://github.com/veridisquot/ecs) (Dec 2021)</div>
+		<div class="desc">[ECS](https://github.com/quou/ecs) (Dec 2021)</div>
 	</div>
 </div>
 
@@ -95,11 +95,11 @@ operating system APIs and direct memory management.
 
 ## Other Projects
 
- - [gen.lua](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/gen.lua) (Feb 2022) - Static site generator, responsible for creating the HTML for this website.
- - [gs_xml](https://github.com/veridisquot/gs_xml) (Dec 2021) - Simple XML parser using [Gunslinger](https://github.com/veridisquot/gs_xml)
- - [sml](https://github.com/veridisquot/sml) (Dec 2021) - Maths library written in Lua that generates C99 code.
+ - [gen.lua](https://raw.githubusercontent.com/quou/quou.github.io/master/gen.lua) (Feb 2022) - Static site generator, responsible for creating the HTML for this website.
+ - [gs_xml](https://github.com/quou/gs_xml) (Dec 2021) - Simple XML parser using [Gunslinger](https://github.com/quou/gs_xml)
+ - [sml](https://github.com/quou/sml) (Dec 2021) - Maths library written in Lua that generates C99 code.
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
- - [generator.c](https://raw.githubusercontent.com/veridisquot/veridisquot.github.io/master/generator.c) (Mar 2021) - Static site generator, used to be responsible for creating the HTML for this website.
+ - [generator.c](https://raw.githubusercontent.com/quou/quou.github.io/master/generator.c) (Mar 2021) - Static site generator, used to be responsible for creating the HTML for this website.
 
 ## Writing
  - [Scripting Interpreters](scrinterp.html) (Feb 2022)

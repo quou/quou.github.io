@@ -16,4 +16,4 @@ It includes the following features:
 ![screenshot](media/mml.png)
 
 ## Links
- - [GitHub](https://github.com/veridisquot/mml/)
+ - [GitHub](https://github.com/quou/mml/)

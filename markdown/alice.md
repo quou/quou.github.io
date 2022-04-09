@@ -6,5 +6,5 @@ A high performance game engine written in C99 that makes use of Data Oriented De
 ![screenshot](media/alice_stress.png)
 
 ## Links
- - [alice](https://github.com/veridisquot/alice) - Main GitHub repository
+ - [alice](https://github.com/quou/alice) - Main GitHub repository
 
