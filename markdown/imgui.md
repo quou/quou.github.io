@@ -53,6 +53,6 @@ The result of this being:
  - Drop-down, menu bar, colour picker and list box elements.
 
 ## Links
- - [Parent Repository](github.com/quou/openmv)
+ - [Parent Repository](https://github.com/quou/openmv)
  - [Source](https://github.com/quou/openmv/blob/master/core/src/imui.c) & [Header](https://github.com/quou/openmv/blob/master/core/src/imui.h)
  - [Testing Sandbox](https://github.com/quou/openmv/blob/master/util/imuitest/src/main.c)
