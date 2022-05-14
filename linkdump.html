@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>George Lamb</title>
+<style>
+body {
+	margin: 40px auto;
+	max-width: 650px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+}
+
+body {
+	margin: auto;
+	width: 50%;
+	padding: 0 10px;
+}
+
+@media screen and (max-width:900px) {
+	body {
+		margin: auto;
+		width: 90%;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (min-width:2000px) {
+	body {
+		margin: 40px auto;
+		max-width: 1000px;
+		line-height: 1.6;
+		font-size: 18px;
+		color: #444;
+	}
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  height: 100px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.thumb {
+	object-fit: cover;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+code {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+
+pre {
+	line-height: 1;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+a {
+	color: #444;
+	background-color: white;
+}
+
+a:hover {
+	color: white;
+	background-color: #444;
+}
+</style>
+</head>
+<body>
+<h1> Linkdump</h1>
+
+<p>Here's where I put noteworthy links followed by short descriptions so that I might refer back to them later.</p>
+
+<h2> OpenGL</h2>
+<ul><li><a href="https://learnopengl.com/">Learn OpenGL</a> - Everybody knows this one.</li>
+<li><a href="https://ogldev.org/">OGLdev</a> - Has a neat CSM tutorial.</li>
+<li><a href="https://docs.gl/">docs.gl</a> - Nice OpenGL API documentation site.</li></ul>
+
+<h2> Vulkan</h2>
+<ul><li><a href="https://vulkan-tutorial.com/">Vulkan Tutorial</a> - Learn OpenGL but for Vulkan. Doesn't cover push constants or framebuffers in depth.</li>
+<li><a href="https://github.com/SaschaWillems/Vulkan">Sascha Willems' Vulkan Examples</a> - Vulkan samples showcasing a number of techniques.</li>
+<li><a href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/html/vkspec.html">Vulkan 1.2 spec</a></li></ul>
+
+<h2> General Graphics</h2>
+
+<p>Though some might have the name of a graphics API, these are for the most part API-agnostic.</p>
+
+<ul><li><a href="https://github.com/diharaw/volumetric-lighting">OpenGL Volumetric Lighting</a> - Volumetric Lighting</li>
+<li><a href="https://wickedengine.net/2017/08/30/voxel-based-global-illumination/">Voxel-based Global Illumination</a> - Global illumination as it works in WickedEngine.</li>
+<li><a href="https://www.pbr-book.org/">PBR book</a> - Good resource for PBR.</li>
+<li><a href="https://developer.download.nvidia.com/whitepapers/2008/PCSS_Integration.pdf">PCSS soft shadows</a> - Outlines the implementation of convincing soft shadows.</li>
+<li><a href="https://github.com/aryaman-gupta/Realistic-Soft-Shadows">Realistic soft shadows</a> - Project demonstrating soft shadowing.</li>
+<li><a href="https://developer.download.nvidia.com/presentations/2008/GDC/GDC08_SoftShadowMapping.pdf">Advance Soft Shadow Mapping Techniques</a> - Presentation about soft shadows.</li>
+<li><a href="https://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf">Percentage-Closer Soft Shadows</a> - Paper about PCSS.</li>
+<li><a href="https://github.com/pboechat/PCSS">PCSS</a> - PCSS implementation. The code is very weird though.</li></ul>
+
+<h2> Compilers/Interpreters</h2>
+
+<ul><li><a href="https://craftinginterpreters.com/">Crafting Interpreters</a> - Book about interpreters.</li>
+<li><a href="https://buildyourownlisp.com">BYO Lisp</a> - Book about building your own Lisp interpreter.</li></ul>
+
+<h2> GNU/Linux</h2>
+
+<ul><li><a href="https://x.org/releases/current/doc/libX11/libX11/libX11.html">Xlib documentation</a></li></ul>
+
+<h2> Misc</h2>
+</body>
+</html>
