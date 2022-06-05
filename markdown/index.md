@@ -24,15 +24,22 @@ operating system APIs and direct memory management.
 
 <div class="responsive">
 	<div class="gallery">
+		<img class="thumb" src="media/vkr_screenshot_001.png">
+		<div class="desc">[Vulkan Renderer](vkr.html) (WIP)</div>
+	</div>
+</div>
+
+<div class="responsive">
+	<div class="gallery">
 		<img class="thumb" src="https://raw.githubusercontent.com/quou/openmv/master/media/001.png">
-		<div class="desc">[OpenMV](openmv.html) (WIP)</div>
+		<div class="desc">[OpenMV](openmv.html) (Apr 2022)</div>
 	</div>
 </div>
 
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/imgui.png">
-		<div class="desc">[IMGUI](imgui.html) (WIP)</div>
+		<div class="desc">[IMGUI](imgui.html) (Apr 2022)</div>
 	</div>
 </div>
 

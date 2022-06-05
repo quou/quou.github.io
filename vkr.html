@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>George Lamb</title>
+<style>
+body {
+	margin: 40px auto;
+	max-width: 650px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+}
+
+body {
+	margin: auto;
+	width: 50%;
+	padding: 0 10px;
+}
+
+@media screen and (max-width:900px) {
+	body {
+		margin: auto;
+		width: 90%;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (min-width:2000px) {
+	body {
+		margin: 40px auto;
+		max-width: 1000px;
+		line-height: 1.6;
+		font-size: 18px;
+		color: #444;
+	}
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  height: 100px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.thumb {
+	object-fit: cover;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+code {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+
+pre {
+	line-height: 1;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+a {
+	color: #444;
+	background-color: white;
+}
+
+a:hover {
+	color: white;
+	background-color: #444;
+}
+</style>
+</head>
+<body>
+<h1> Vulkan Renderer</h1>
+
+<p>I created this project to learn the Vulkan graphics API during my time at AIE for my
+Complex Games Systems project. It's written in C++ and includes a number of features,
+both graphics related and more general features:</p>
+
+<ul><li>API abstraction.</li>
+<li>Bloom.</li>
+<li>Percentage-Closer Soft Shadows.</li>
+<li>Deferred shading.</li>
+<li>Resource packing.</li>
+<li>Modular architecture.</li>
+<li>2-D rendering and atlasing system.</li>
+<li>Basic Immediate-mode GUI.</li></ul>
+
+<h2> PCSS</h2>
+One of my focuses of this project was to implement soft shadows. I used quite a few
+resources to aid me in this project, including <a href="https://github.com/pboechat/PCSS">this project</a>
+and <a href="https://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf">this paper</a>.
+PCSS is a technique that causes the shadows to become softer the further away the
+blocker is from the surface that it's casting a shadow onto, just like how is seen
+in real life. In the first screenshot below, its particularly visible on the shadow
+of the tall cube.
+
+<p>It works by doing an initial "blocker search" to gain an average of all of the depth
+values in a specified area in terms of the surface, using a poisson disk (not unlike a
+PCF implementation). Then, it uses this formula (described in the paper) to estimate the
+size of the penumbra:
+<code>p = (receiver - blocker) * lightsize / blocker</code>, where <code>blocker</code> is the average gained
+from the blocker search. This estimation is then used to calculate a radius to sample
+the depth map using PCF. PCF is probably not the best approach to use for this kind of
+soft shadowing, as it requires a lot of samples (the screenshots below use 64 per-pixel)
+to avoid banding effects. Variance shadow mapping would probably yield much better results
+and is something I'd like to research more into in the near future.</p>
+
+<h2> Links</h2>
+<ul><li><a href="https://github.com/quou/vkr">GitHub</a></li></ul>
+
+<h2> Screenshots</h2>
+<img src="media/vkr_screenshot_001.png" alt="screenshot"/>
+</body>
+</html>
