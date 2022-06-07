@@ -26,7 +26,7 @@ operating system APIs and direct memory management.
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/vkr_screenshot_001.png">
-		<div class="desc">[Vulkan Renderer](vkr.html) (WIP)</div>
+		<div class="desc">[Vulkan Renderer](vkr.html) (Jun 2022)</div>
 	</div>
 </div>
 
@@ -68,7 +68,7 @@ operating system APIs and direct memory management.
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/smol.png">
-		<div class="desc">[Smol](https://veridis-quo-t.itch.io/smol) (Sep 2021)</div>
+		<div class="desc">[Smol](https://quou.itch.io/smol) (Sep 2021)</div>
 	</div>
 </div>
 
@@ -96,7 +96,7 @@ operating system APIs and direct memory management.
 <div class="responsive">
 	<div class="gallery">
 		<img class="thumb" src="media/legend.png">
-		<div class="desc">[Legend of Cave](https://veridis-quo-t.itch.io/legend) (Jan 2020)</div>
+		<div class="desc">[Legend of Cave](https://quou.itch.io/legend) (Jan 2020)</div>
 	</div>
 </div>
 
