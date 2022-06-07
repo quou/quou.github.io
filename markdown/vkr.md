@@ -33,6 +33,17 @@ soft shadowing, as it requires a lot of samples (the screenshots below use 64 pe
 to avoid banding effects. Variance shadow mapping would probably yield much better results
 and is something I'd like to research more into in the near future.
 
+## Learning Vulkan After OpenGL
+Vulkan is the second graphics API that I've ever used, the previous one being OpenGL. I'm
+very glad I started off with OpenGL, as learning Vulkan would've been much more difficult
+if I had also had to simultaneously learn such things as what framebuffers and shaders are.
+
+Learning Vulkan likely means that I will now write faster OpenGL code as well. In Vulkan
+things like changing descriptor sets mean re-creating the entire graphics pipeline, and
+this is likely something that OpenGL abstracts away and does in the background, so avoiding
+changing the layout of uniforms or re-creating textures in OpenGL would probably give some
+performance gains. 
+
 ## Links
  - [GitHub](https://github.com/quou/vkr)
 
