@@ -7,6 +7,7 @@ I'm experienced with the following technologies:
  - C++ (Including C++ 17)
  - Lua (The language itself and the C API)
  - Modern OpenGL
+ - Vulkan
  - The Win32 API
  - Xlib
  - Godot Game Engine
