@@ -13,8 +13,10 @@ I'm experienced with the following technologies:
  - Godot Game Engine
  - GNU/Linux
 
-I enjoy working closely with the operating system and hardware; Using
-operating system APIs and direct memory management.
+My main interests include:
+ - Computer graphics.
+ - Game and game engine design.
+ - Compilers and interpreters.
 
 ## Links
  - [My GitHub profile](https://github.com/quou)
