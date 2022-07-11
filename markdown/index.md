@@ -20,6 +20,7 @@ My main interests include:
 
 ## Links
  - [My GitHub profile](https://github.com/quou)
+ - [My Codeberg profile](https://codeberg.org/quou)
  - [My Itch.io profile](https://quou.itch.io)
  - [Linkdump] (linkdump.html)
 
