@@ -25,6 +25,7 @@ Though some might have the name of a graphics API, these are for the most part A
  - [Percentage-Closer Soft Shadows](https://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf) - Paper about PCSS.
  - [PCSS](https://github.com/pboechat/PCSS) - PCSS implementation. The code is very weird though.
  - [Area Light Sources for Real-Time Graphics](https://www.microsoft.com/en-us/research/wp-content/uploads/1996/03/arealights.pdf) - Paper about area light sources.
+ - [Transparent Shadow Maps](https://wickedengine.net/2018/01/18/easy-transparent-shadow-maps/) - Article about transparent shadow maps.
 
 ## Compilers/Interpreters
 
