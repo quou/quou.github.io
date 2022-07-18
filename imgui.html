@@ -113,8 +113,8 @@ a:hover {
 <img src="media/imgui2.png" alt="screnshot"/>
 <img src="https://raw.githubusercontent.com/quou/openmv/master/media/003.png" alt="screnshot"/>
 
-<p>I'm making this small GUI library to aid in the creation of <a href="openmv.html">my game</a>,
-to use for displaying debug information like FPS, frame time and memory usage.</p>
+<p>I made this GUI framework to aid the creation of <a href="openmv.html">OpenMV</a>. It's purpose
+was for displaying debug information and some in-game GUI.</p>
 
 <p>It's still a work-in-progress; As of writing it has the following features:
 <ul><li>Windows that can be moved and resized.</li>
@@ -166,5 +166,20 @@ if (ui_begin_window(ui, "Test Window", make_v2i(0, 0), null)) {
 <ul><li><a href="https://github.com/quou/openmv">Parent Repository</a></li>
 <li><a href="https://github.com/quou/openmv/blob/master/core/src/imui.c">Source</a> & <a href="https://github.com/quou/openmv/blob/master/core/src/imui.h">Header</a></li>
 <li><a href="https://github.com/quou/openmv/blob/master/util/imuitest/src/main.c">Testing Sandbox</a></li></ul>
+
+<h2> Implementation Details</h2>
+The GUI works by pushing different elements into a vector every frame. At the end of each frame,
+said vector is iterated and each element is drawn. A faster method would be to simply draw elements
+immediately as they are created, but this would complicate things like z sorting.
+
+<p>Layouts are handled using a point for the current "cursor position". The current cursor position
+is where the next element will be drawn.</p>
+
+<p>The active, hovered and hot elements are stored as pointers into the aforementioned vector and are set
+upon interaction with a given element. For example, the <code>ui_button</code> function first pushes a new button
+element into the element vector of the current window, then checks for interactions, setting the <code>hot</code>
+pointer to the previously pushed element if the mouse is held over the button, or the <code>hovered</code> pointer
+if the button is hovered. It then returns true if the mouse was released over the button (indicating a
+button press) or false otherwise.</p>
 </body>
 </html>
