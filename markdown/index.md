@@ -91,13 +91,6 @@ My main interests include:
 
 <div class="responsive">
 	<div class="gallery">
-		<img class="thumb" src="media/game_project_screenshot_1_full.JPG">
-		<div class="desc">[Untitled Game Project](game.html) (May 2020)</div>
-	</div>
-</div>
-
-<div class="responsive">
-	<div class="gallery">
 		<img class="thumb" src="media/legend.png">
 		<div class="desc">[Legend of Cave](https://quou.itch.io/legend) (Jan 2020)</div>
 	</div>
