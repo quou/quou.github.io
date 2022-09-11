@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>George Lamb</title>
+<style>
+body {
+	margin: 40px auto;
+	max-width: 650px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+}
+
+body {
+	margin: auto;
+	width: 50%;
+	padding: 0 10px;
+}
+
+@media screen and (max-width:900px) {
+	body {
+		margin: auto;
+		width: 90%;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (min-width:2000px) {
+	body {
+		margin: 40px auto;
+		max-width: 1000px;
+		line-height: 1.6;
+		font-size: 18px;
+		color: #444;
+	}
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  height: 100px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.thumb {
+	object-fit: cover;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+code {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+
+pre {
+	line-height: 1;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+a {
+	color: #444;
+	background-color: white;
+}
+
+a:hover {
+	color: white;
+	background-color: #444;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1a1a1a;
+		color: #d6d6d6;
+	}
+
+	a {
+		color: #d6d6d6;
+		background-color: #1a1a1a;
+	}
+
+	a:hover {
+		color: #1a1a1a;
+		background-color: #d6d6d6;
+	}
+
+	code {
+		color: #bababa;
+	}
+}
+</style>
+</head>
+<body>
+<h1> Corrosion</h1>
+
+<p>Corrosion is a graphics library with backends for OpenGL ES and Vulkan.</p>
+
+<p>It has the following features:
+<ul><li>Backends for OpenGL ES and Vulkan 1.2. The Vulkan backend uses the new dynamic rendering features.</li>
+<li>Custom-made IMGUI, a spiritual successor to the one that I made for <a href="openmv.html">OpenMV</a>.</li>
+<li>Generic data structures, including vector and hash table implementations that make heavy use
+   of macros.</li>
+<li>Generic and extendable resource manager with Quake PAK reader.</li>
+<li>Hand-made windowing and input for Windows and X11.</li>
+<li>Utilities for such things as frustum culling.</li>
+<li>API abstraction that wraps Vulkan pipelines and emulates them in OpenGL.</li>
+<li>Compute shaders (Vulkan only).</li></ul></p>
+
+<h2> Links</h2>
+<ul><li><a href="https://codeberg.org/quou/corrosion">Codeberg</a></li>
+<li><a href="https://github.com/quou/corrosion">GitHub</a></li></ul>
+
+<h2> Demo Screenshots</h2>
+<img src="media/voxel.png" alt="screenshot"/>
+<img src="media/lotsofmeshes.png" alt="screenshot"/>
+<img src="media/imgui4.png" alt="screenshot"/>
+</body>
+</html>

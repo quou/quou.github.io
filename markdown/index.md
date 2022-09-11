@@ -28,6 +28,13 @@ My main interests include:
 
 <div class="responsive">
 	<div class="gallery">
+		<img class="thumb" src="media/voxel.png">
+		<div class="desc">[Corrosion](corrosion.html) (WIP)</div>
+	</div>
+</div>
+
+<div class="responsive">
+	<div class="gallery">
 		<img class="thumb" src="media/vkr_screenshot_001.png">
 		<div class="desc">[Vulkan Renderer](vkr.html) (Jun 2022)</div>
 	</div>
