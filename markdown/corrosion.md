@@ -12,6 +12,7 @@ It has the following features:
  - Utilities for such things as frustum culling.
  - API abstraction that wraps Vulkan pipelines and emulates them in OpenGL.
  - Compute shaders (Vulkan only).
+ - Memory allocator that checks for memory leaks.
 
 ## Links
  - [Codeberg](https://codeberg.org/quou/corrosion)
