@@ -6,11 +6,12 @@ Here's where I put noteworthy links followed by short descriptions so that I mig
  - [Learn OpenGL](https://learnopengl.com/) - Everybody knows this one.
  - [OGLdev](https://ogldev.org/) - Has a neat CSM tutorial.
  - [docs.gl](https://docs.gl/) - Nice OpenGL API documentation site.
+ - [OpenGL 4.6 spec](https://registry.khronos.org/OpenGL/specs/gl/glspec46.core.pdf).
 
 ## Vulkan
  - [Vulkan Tutorial](https://vulkan-tutorial.com/) - Learn OpenGL but for Vulkan. Doesn't cover push constants or framebuffers in depth.
  - [Sascha Willems' Vulkan Examples](https://github.com/SaschaWillems/Vulkan) - Vulkan samples showcasing a number of techniques.
- - [Vulkan 1.2 spec](https://www.khronos.org/registry/vulkan/specs/1.2-extensions/html/vkspec.html)
+ - [Vulkan 1.2 spec](https://www.khronos.org/registry/vulkan/specs/1.2-extensions/html/vkspec.html).
 
 ## General Graphics
 
@@ -26,11 +27,13 @@ Though some might have the name of a graphics API, these are for the most part A
  - [PCSS](https://github.com/pboechat/PCSS) - PCSS implementation. The code is very weird though.
  - [Area Light Sources for Real-Time Graphics](https://www.microsoft.com/en-us/research/wp-content/uploads/1996/03/arealights.pdf) - Paper about area light sources.
  - [Transparent Shadow Maps](https://wickedengine.net/2018/01/18/easy-transparent-shadow-maps/) - Article about transparent shadow maps.
+ - [GLSL Noise Algorithms](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83) - Simple noise functions.
 
 ## Compilers/Interpreters
 
  - [Crafting Interpreters](https://craftinginterpreters.com/) - Book about interpreters.
  - [BYO Lisp](https://buildyourownlisp.com) - Book about building your own Lisp interpreter.
+ - [LLVM Tutorial](https://llvm.org/docs/tutorial/) - Tutorial about building a simple programming language and JIT using LLVM.
 
 ## GNU/Linux
 

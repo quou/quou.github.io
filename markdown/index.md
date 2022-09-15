@@ -3,8 +3,8 @@
 Home page of George Lamb, student and programmer.
 
 I'm experienced with the following technologies:
- - C (Both ANSI and 99)
- - C++ (Including C++ 17)
+ - C
+ - C++
  - Lua (The language itself and the C API)
  - Modern OpenGL
  - Vulkan
@@ -84,13 +84,6 @@ My main interests include:
 
 <div class="responsive">
 	<div class="gallery">
-		<img class="thumb" src="media/alice_ss_005.png">
-		<div class="desc">[Alice](alice.html) (Aug 2021)</div>
-	</div>
-</div>
-
-<div class="responsive">
-	<div class="gallery">
 		<img class="thumb" src="media/crimson_screenshot_00_full.png">
 		<div class="desc">[Crimson](crimson.html) (Apr 2021)</div>
 	</div>
@@ -111,7 +104,6 @@ My main interests include:
  - [gs_xml](https://github.com/quou/gs_xml) (Dec 2021) - Simple XML parser using [Gunslinger](https://github.com/quou/gs_xml)
  - [sml](https://github.com/quou/sml) (Dec 2021) - Maths library written in Lua that generates C99 code.
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
- - [generator.c](https://raw.githubusercontent.com/quou/quou.github.io/master/generator.c) (Mar 2021) - Static site generator, used to be responsible for creating the HTML for this website.
 
 ## Writing
  - [Scripting Interpreters](scrinterp.html) (Feb 2022)

@@ -2,7 +2,6 @@ markdown/index.md index.html
 markdown/game.md game.html
 markdown/quo.md quo.html
 markdown/crimson.md crimson.html
-markdown/alice.md alice.html
 markdown/openmv.md openmv.html
 markdown/scrinterp.md scrinterp.html
 markdown/mml.md mml.html
