@@ -7,7 +7,7 @@ It has the following features:
  - Custom-made IMGUI, a spiritual successor to the one that I made for [OpenMV](openmv.html).
  - Generic data structures, including vector and hash table implementations that make heavy use
    of macros.
- - Generic and extendable resource manager with Quake PAK reader.
+ - Generic and extendable resource manager with Quake PAK reader/writer.
  - Hand-made windowing and input for Windows and X11.
  - Utilities for such things as frustum culling.
  - API abstraction that wraps Vulkan pipelines and emulates them in OpenGL.

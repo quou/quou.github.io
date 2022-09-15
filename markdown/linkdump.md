@@ -19,7 +19,7 @@ Though some might have the name of a graphics API, these are for the most part A
 
  - [OpenGL Volumetric Lighting](https://github.com/diharaw/volumetric-lighting) - Volumetric Lighting
  - [Voxel-based Global Illumination](https://wickedengine.net/2017/08/30/voxel-based-global-illumination/) - Global illumination as it works in WickedEngine.
- - [PBR book](https://www.pbr-book.org/) - Good resource for PBR.
+ - [PBR book](https://www.pbr-book.org/) - Good resource for PBR and raytracing.
  - [PCSS soft shadows](https://developer.download.nvidia.com/whitepapers/2008/PCSS_Integration.pdf) - Outlines the implementation of convincing soft shadows.
  - [Realistic soft shadows](https://github.com/aryaman-gupta/Realistic-Soft-Shadows) - Project demonstrating soft shadowing.
  - [Advance Soft Shadow Mapping Techniques](https://developer.download.nvidia.com/presentations/2008/GDC/GDC08_SoftShadowMapping.pdf) - Presentation about soft shadows.
@@ -40,3 +40,5 @@ Though some might have the name of a graphics API, these are for the most part A
  - [Xlib documentation](https://x.org/releases/current/doc/libX11/libX11/libX11.html)
 
 ## Misc
+
+ - [Quake PAK documentation](https://quakewiki.org/wiki/.pak) - Includes an example of reading a PAK file in C.

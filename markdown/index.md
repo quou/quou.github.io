@@ -18,6 +18,10 @@ My main interests include:
  - Game and game engine design.
  - Compilers and interpreters.
 
+I'm currently working on:
+ - My [graphics framework](corrosion.html).
+ - Studying game programming at AIE.
+
 ## Links
  - [My GitHub profile](https://github.com/quou)
  - [My Codeberg profile](https://codeberg.org/quou)
