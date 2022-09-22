@@ -34,6 +34,7 @@ Though some might have the name of a graphics API, these are for the most part A
  - [Crafting Interpreters](https://craftinginterpreters.com/) - Book about interpreters.
  - [BYO Lisp](https://buildyourownlisp.com) - Book about building your own Lisp interpreter.
  - [LLVM Tutorial](https://llvm.org/docs/tutorial/) - Tutorial about building a simple programming language and JIT using LLVM.
+ - [LLVM Structure Code Generation](http://ranok.github.io/llvm/2014/12/04/llvm-structs.html) - Tutorial about generating code for structures with LLVM.
 
 ## GNU/Linux
 
