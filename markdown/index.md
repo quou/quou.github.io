@@ -1,6 +1,6 @@
 # George Lamb
 
-Home page of George Lamb, student and programmer.
+Home page of George Lamb, aspiring programmer studying at AIE.
 
 I'm experienced with the following technologies:
  - C
