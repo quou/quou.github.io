@@ -19,6 +19,7 @@ My main interests include:
  - Compilers and interpreters.
 
 I'm currently working on:
+ - Making [my own programming language](prglang.html).
  - My [graphics framework](corrosion.html).
  - Studying game programming at AIE.
 
@@ -29,6 +30,13 @@ I'm currently working on:
  - [Linkdump] (linkdump.html)
 
 ## Projects
+
+<div class="responsive">
+	<div class="gallery">
+		<img class="thumb" src="media/qc.png">
+		<div class="desc">[Programming Language](prglang.html) (WIP)</div>
+	</div>
+</div>
 
 <div class="responsive">
 	<div class="gallery">
