@@ -10,12 +10,12 @@ I'm experienced with the following technologies:
  - Vulkan
  - The Win32 API
  - Xlib
- - Godot Game Engine
+ - Godot and Unity Game Engines
  - GNU/Linux
 
 My main interests include:
  - Computer graphics.
- - Game and game engine design.
+ - Video games.
  - Compilers and interpreters.
 
 I'm currently working on:
