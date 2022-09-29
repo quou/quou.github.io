@@ -149,7 +149,9 @@ and very work in progress, but right now it has the following features:
 <li>String literals.</li>
 <li>Compile-time type checking.</li>
 <li>Casting.</li>
-<li>Procedures with external linkage.</li></ul></p>
+<li>Procedures with external linkage.</li>
+<li>Name spaces.</li>
+<li>Fancy error messages that point to the erroneous token.</li></ul></p>
 
 <p>Currently, it doesn't generate its own entry point and relies on linking to a C program
 to provide a main function. That will change soon, but I'm working on getting the basic
@@ -159,8 +161,6 @@ to get this language to the point where it is able to self-host.</p>
 <p>I have plans to add these features:
 <ul><li>Write unit tests for all of the current features.</li>
 <li>Structs with support for methods.</li>
-<li>Better error messages.</li>
-<li>Name spaces.</li>
 <li>Generic structs, constructs and deconstructors and operator overloading.</li>
 <li>A basic standard library including things like IO, file system and data structures like
    vectors, hash tables and strings.</li>
@@ -181,6 +181,12 @@ to get this language to the point where it is able to self-host.</p>
    32-bit versions of these values can be obtained with <code>i32</code> and <code>f32</code>. This is
    similar to Odin on a 64 bit system.</li>
 <li><code>elif</code> is used in place of <code>else if</code>.</li></ul></p>
+
+<p>The errors print in a style similar to that of GCC or Clang, where it points to the token that
+caused the error:</p>
+
+<p><img src="media/error01.png" alt="Screenshot"/>
+<img src="media/error02.png" alt="Screenshot"/></p>
 
 <p>Here is what Fizz Buzz looks like in my language:</p>
 

@@ -19,6 +19,8 @@ and very work in progress, but right now it has the following features:
  - Compile-time type checking.
  - Casting.
  - Procedures with external linkage.
+ - Name spaces.
+ - Fancy error messages that point to the erroneous token.
 
 Currently, it doesn't generate its own entry point and relies on linking to a C program
 to provide a main function. That will change soon, but I'm working on getting the basic
@@ -28,8 +30,6 @@ to get this language to the point where it is able to self-host.
 I have plans to add these features:
  - Write unit tests for all of the current features.
  - Structs with support for methods.
- - Better error messages.
- - Name spaces.
  - Generic structs, constructs and deconstructors and operator overloading.
  - A basic standard library including things like IO, file system and data structures like
    vectors, hash tables and strings.
@@ -50,6 +50,12 @@ The syntax is very C-like, but with some minor differences, including:
    32-bit versions of these values can be obtained with `i32` and `f32`. This is
    similar to Odin on a 64 bit system.
  - `elif` is used in place of `else if`.
+
+The errors print in a style similar to that of GCC or Clang, where it points to the token that
+caused the error:
+
+![Screenshot](media/error01.png)
+![Screenshot](media/error02.png)
 
 Here is what Fizz Buzz looks like in my language:
 
