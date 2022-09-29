@@ -40,6 +40,9 @@ Though some might have the name of a graphics API, these are for the most part A
 
  - [Xlib documentation](https://x.org/releases/current/doc/libX11/libX11/libX11.html)
 
+## Mathematics
+ - (Video) [An In-Depth look at Lerp, Smoothstep, and Shaping Functions](https://www.youtube.com/watch?v=YJB1QnEmlTs) - Good video about lerp. Especially note the last two minutes where he talks about framerate independence.
+
 ## Misc
 
  - [Quake PAK documentation](https://quakewiki.org/wiki/.pak) - Includes an example of reading a PAK file in C.
