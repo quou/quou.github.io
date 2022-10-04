@@ -19,6 +19,27 @@ It has the following features:
  - [GitHub](https://github.com/quou/corrosion)
 
 ## Demo Screenshots
-![screenshot](media/voxel.png)
-![screenshot](media/lotsofmeshes.png)
-![screenshot](media/imgui4.png)
+<figure>
+	<img src="https://codeberg.org/quou/corrosion/raw/branch/master/media/demos/sand.png" alt="Compute Shader Sand Simulation">
+	<figcaption>Compute Shader Sand Simulation</figcaption>
+</figure>
+
+<figure>
+	<img src="https://codeberg.org/quou/corrosion/raw/branch/master/media/demos/voxel.png" alt="Voxel Raytracer">
+	<figcaption>Voxel Raytracer</figcaption>
+</figure>
+
+<figure>
+	<img src="https://codeberg.org/quou/corrosion/raw/branch/master/media/demos/3d.png" alt="3D Renderer">
+	<figcaption>Simple 3D Renderer</figcaption>
+</figure>
+
+<figure>
+	<img src="https://codeberg.org/quou/corrosion/raw/branch/master/media/demos/volume.png" alt="Volumetric Rendering">
+	<figcaption>Volumetric Rendering</figcaption>
+</figure>
+
+<figure>
+	<img src="media/imgui4.png" alt="Volumetric Rendering">
+	<figcaption>Immediate Mode GUI</figcaption>
+</figure>

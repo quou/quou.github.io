@@ -40,7 +40,7 @@ I'm currently working on:
 
 <div class="responsive">
 	<div class="gallery">
-		<img class="thumb" src="media/voxel.png">
+		<img class="thumb" src="https://codeberg.org/quou/corrosion/raw/branch/master/media/demos/voxel.png">
 		<div class="desc">[Corrosion](corrosion.html) (WIP)</div>
 	</div>
 </div>
