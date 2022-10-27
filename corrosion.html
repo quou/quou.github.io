@@ -131,7 +131,7 @@ a:hover {
 <body>
 <h1> Corrosion</h1>
 
-<p>Corrosion is a graphics library with backends for OpenGL ES and Vulkan.</p>
+<p>Corrosion is a graphics library with backends for OpenGL and Vulkan.</p>
 
 <p>It has the following features:
 <ul><li>Backends for OpenGL 3.3 and Vulkan 1.2. The Vulkan backend uses the new dynamic rendering features.</li>
@@ -144,11 +144,21 @@ a:hover {
 <li>API abstraction that wraps Vulkan pipelines and emulates them in OpenGL.</li>
 <li>Compute shaders (Vulkan only).</li>
 <li>Memory allocator that checks for memory leaks.</li>
-<li>Function to check for API support and choose the best available one.</li></ul></p>
+<li>Function to check for API support and choose the best available one.</li>
+<li>Support for Emscripten.</li></ul></p>
 
 <h2> Links</h2>
 <ul><li><a href="https://codeberg.org/quou/corrosion">Codeberg</a></li>
 <li><a href="https://github.com/quou/corrosion">GitHub</a></li></ul>
+
+<h2> Emscripten</h2>
+Here is a demo of the IMGUI running on Emscripten (If it isn't displaying then it probably means
+your browser doesn't support WebGL 2.0):
+
+<p><iframe src="content/corrosion/ui.html" width="800" height="600" style="padding:none;border:none;" scrolling="no"></iframe></p>
+
+<p>There are some bugs in the Emscripten backend that need fixing and some unimplemented features
+(such as the filesystem API), but it's functional for the most part.</p>
 
 <h2> TinyMMO</h2>
 This is an early-stage multiplayer game that I'm building to somewhat battle-test this framework.

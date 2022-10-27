@@ -1,6 +1,6 @@
 # Corrosion
 
-Corrosion is a graphics library with backends for OpenGL ES and Vulkan.
+Corrosion is a graphics library with backends for OpenGL and Vulkan.
 
 It has the following features:
  - Backends for OpenGL 3.3 and Vulkan 1.2. The Vulkan backend uses the new dynamic rendering features.
@@ -14,10 +14,20 @@ It has the following features:
  - Compute shaders (Vulkan only).
  - Memory allocator that checks for memory leaks.
  - Function to check for API support and choose the best available one.
+ - Support for Emscripten.
 
 ## Links
  - [Codeberg](https://codeberg.org/quou/corrosion)
  - [GitHub](https://github.com/quou/corrosion)
+
+## Emscripten
+Here is an interactive demo of the IMGUI running on Emscripten (If it isn't displaying then it
+probably means your browser doesn't support WebGL 2.0):
+
+<iframe src="content/corrosion/ui.html" width="800" height="600" style="padding:none;border:none;" scrolling="no"></iframe>
+
+There are some bugs in the Emscripten backend that need fixing and some unimplemented features
+(such as the filesystem API), but it's functional for the most part.
 
 ## TinyMMO
 This is an early-stage multiplayer game that I'm building to somewhat battle-test this framework.
