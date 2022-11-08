@@ -1,29 +1,160 @@
-# Vulkan-Style Pipeline Objects in OpenGL
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>George Lamb</title>
+<style>
+body {
+	margin: 40px auto;
+	max-width: 650px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+}
 
-![image](media/glpip.png)
+body {
+	margin: auto;
+	width: 50%;
+	padding: 0 10px;
+}
 
-*November 8, 2022*
+@media screen and (max-width:900px) {
+	body {
+		margin: auto;
+		width: 90%;
+		padding: 0 10px;
+	}
+}
 
-Not so long ago, I added an OpenGL backend to my graphics framework, [Corrosion](corrosion.html).
+@media screen and (min-width:2000px) {
+	body {
+		margin: 40px auto;
+		max-width: 1000px;
+		line-height: 1.6;
+		font-size: 18px;
+		color: #444;
+	}
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  height: 100px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.thumb {
+	object-fit: cover;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+code {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+
+pre {
+	line-height: 1;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+a {
+	color: #444;
+	background-color: white;
+}
+
+a:hover {
+	color: white;
+	background-color: #444;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1a1a1a;
+		color: #d6d6d6;
+	}
+
+	a {
+		color: #d6d6d6;
+		background-color: #1a1a1a;
+	}
+
+	a:hover {
+		color: #1a1a1a;
+		background-color: #d6d6d6;
+	}
+
+	code {
+		color: #bababa;
+	}
+}
+</style>
+</head>
+<body>
+<h1> Vulkan-Style Pipeline Objects in OpenGL</h1>
+
+<p><img src="media/glpip.png" alt="image"/></p>
+
+<p><i>November 8, 2022</i></p>
+
+<p>Not so long ago, I added an OpenGL backend to my graphics framework, <a href="corrosion.html">Corrosion</a>.
 My framework was designed initially as a fairly thin wrapper over the Vulkan API, with direct
 abstractions over Vulkan graphics pipelines. This doesn't translate well to OpenGL's global state
 machine and OpenGL's way of sending data to shaders, so a system that emulates Vulkan pipelines
 in OpenGL is necessary. Since I wanted to support Emscripten (which was the whole idea behind
 adding an OpenGL backend), I couldn't use many of the more modern OpenGL features that would
 make this more trivial (such as being able to directly specify sampler bind points in the
-shader).
+shader).</p>
 
-## Not Supporting Compute Shaders
+<h2> Not Supporting Compute Shaders</h2>
 I chose not to support compute shaders in the OpenGL backend. My reasoning behind this is that
 almost any GPU that supports compute shaders will also support Vulkan, so the client application
 will be able to use the Vulkan backend instead. WebGL also doesn't support compute shaders,
 so if it's a web app it can't use compute shaders anyway. Omitting them from the OpenGL backend
 makes the framework easier to maintain, so I think it's worth it in this case.
 
-## The API
+<h2> The API</h2>
 The final API looks something like this:
 
-```
+<pre><code>
 struct pipeline* pipeline = video.new_pipeline(
     flags,
     shader,
@@ -36,102 +167,104 @@ struct pipeline* pipeline = video.new_pipeline(
 video.begin_pipeline(pipeline);
     /* Submit draw commands */
 video.end_pipeline(pipeline);
-```
+</code></pre>
 
-## Pipeline State
+<h2> Pipeline State</h2>
 The easiest part was the pipeline state. This essentially boils to an array of things that
 get enabled on the pipeline begin and disabled on the pipeline end function calls. Combine
 this with some flag checking for things like blending and depth testing, and we get quite
 a robust and maintainable system.
 
-```
+<pre><code>
 /* On pipeline creation: */
 if (flags & pipeline_flags_depth_test)
-	vector_push(pipeline->to_enable, GL_DEPTH_TEST);
+	vector_push(pipeline-&gt;to_enable, GL_DEPTH_TEST);
 if (flags & pipeline_flags_dynamic_scissor)
-	vector_push(pipeline->to_enable, GL_SCISSOR_TEST);
+	vector_push(pipeline-&gt;to_enable, GL_SCISSOR_TEST);
 
 /* On pipeline begin: */
-for (usize i = 0; i < vector_count(pipeline->to_enable); i++) {
-	glEnable(pipeline->to_enable[i]);
+for (usize i = 0; i &lt; vector_count(pipeline-&gt;to_enable); i++) {
+	glEnable(pipeline-&gt;to_enable[i]);
 }
 
 /* Same thing for pipeline end, except calling glDisable instead of glEnable. */
-```
+</code></pre>
 
-## Descriptor Sets
+<h2> Descriptor Sets</h2>
 OpenGL doesn't have descriptor sets, so they need to be emulated. In Corrosion, there are
 three kinds of resources that can be bound in descriptors: Textures, storage buffers and
 uniform buffers. The OpenGL backend doesn't support compute shaders, so I didn't have to
 worry about supporting storage buffers.
 
-The first step to supporting descriptor is in the shader compiler. The shader compilation
+<p>The first step to supporting descriptor is in the shader compiler. The shader compilation
 process looks like this:
- - Compile shaders to SPIR-V bytecode from GLSL.
- - Use SPIRV-Cross to cross-compile the SPIR-V bytecode into OpenGL GLSL (since the
+<ul><li>Compile shaders to SPIR-V bytecode from GLSL.</li>
+<li>Use SPIRV-Cross to cross-compile the SPIR-V bytecode into OpenGL GLSL (since the
    target version of OpenGL doesn't support directly loading SPIR-V, that's a 4.6 feature
    and I'm targeting version 3.3 on desktop or ES 3.0 on the web). At this step,
    binding locations are re-mapped for uniform buffers such that locations are spaced out
    to allow for emulation of descriptor sets and binding locations are saved so that
-   `glActiveTexture` can be used to bind textures to the correct location.
- - Write the SPIR-V bytecode, the OpenGL GLSL code as well as some meta-data for OpenGL
+   <code>glActiveTexture</code> can be used to bind textures to the correct location.</li>
+<li>Write the SPIR-V bytecode, the OpenGL GLSL code as well as some meta-data for OpenGL
    (binding locations, etc.) to a unified file in the CSH format (A format I made
-   specifically for this).
+   specifically for this).</li></ul></p>
 
-The `bind_pipeline_descriptor_set` function takes a pointer to a Corrosion pipeline, a
+<p>The <code>bind_pipeline_descriptor_set</code> function takes a pointer to a Corrosion pipeline, a
 null-terminated string for the name of the descriptor set and a target index where the
 pipeline will be bound to. In the Vulkan backend, this translates into a hash table
 lookup to get a handle to the descriptor from the name and a call to
-`vkCmdBindDescriptorSets`. In OpenGL, it's a bit more involved: It iterates all of the
+<code>vkCmdBindDescriptorSets</code>. In OpenGL, it's a bit more involved: It iterates all of the
 descriptors in the descriptor set, remaps the descriptor bind point to match the
-target bind point for the set, then either calls `glActiveTexture` and `glBindTexture` for
-a sampler descriptor or `glBindBufferBase` for a uniform buffer.
+target bind point for the set, then either calls <code>glActiveTexture</code> and <code>glBindTexture</code> for
+a sampler descriptor or <code>glBindBufferBase</code> for a uniform buffer.</p>
 
-Binding remapping is done with the following formula:
+<p>Binding remapping is done with the following formula:</p>
 
-```
+<pre><code>
 location = set_index * 16 + binding
-```
+</code></pre>
 
-This has the effect of allowing sixteen descriptors per set, which is a reasonable limit
-in my opinion. Since OpenGL doesn't allow texture bindings over GL_TEXTURE0 + k, where `k`
+<p>This has the effect of allowing sixteen descriptors per set, which is a reasonable limit
+in my opinion. Since OpenGL doesn't allow texture bindings over GL_TEXTURE0 + k, where <code>k</code>
 is the value of GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, which may be as low as 16, this won't
 work in a lot of cases where more than one descriptor set is bound at once. To get around
 this, the shader compiler generates an incremental bind location for samplers, then a
-hash table lookup is used to convert the re-mapped location to get said generated location.
+hash table lookup is used to convert the re-mapped location to get said generated location.</p>
 
-## Vertex Attributes
+<h2> Vertex Attributes</h2>
 Vulkan has vertex attributes as part of the pipelines, and so does Corrosion (begin a
 thin-ish wrapper). OpenGL, however, uses a Vertex Array Object (VAO) to describe the
 relationship between raw data and the vertex shader inputs. My first inclination was to
 have a VAO attached to each pipeline that gets set up on pipeline creation (calling
-`glEnableVertexAttribArray`, `glVertexAttribDivisor` and `glVertexAttribPointer` in
-accordance to the configuration passed into `new_pipeline`). However, OpenGL requires a
+<code>glEnableVertexAttribArray</code>, <code>glVertexAttribDivisor</code> and <code>glVertexAttribPointer</code> in
+accordance to the configuration passed into <code>new_pipeline</code>). However, OpenGL requires a
 vertex buffer to be bound when the VAO is configured, which I can't do in this case
 due to how Corrosion separates vertex buffers from vertex attribute configurations;
 Vertex buffers are separate objects to pipelines where vertex attributes are configured.
 
-In OpenGL 4.3, the functions `glBindVertexBuffer` and `glVertexBindingDivisor` were
+<p>In OpenGL 4.3, the functions <code>glBindVertexBuffer</code> and <code>glVertexBindingDivisor</code> were
 added, which allow vertex buffers to be separate from VAOs. However, I cannot use
 these functions since I'm targeting OpenGL ES 3.0 for Emscripten, where they are not
-supported.
+supported.</p>
 
-What I had to do instead was create a VAO as part of the pipeline, but instead of
-configuring it on every binding, it's configured in the `bind_vertex_buffer` function,
+<p>What I had to do instead was create a VAO as part of the pipeline, but instead of
+configuring it on every binding, it's configured in the <code>bind_vertex_buffer</code> function,
 which first binds the vertex buffer, then configures the VAO. This is unfortunate as it
 makes caching the state of the VAO impossible, however setting up a VAO isn't that
 performance intensive (there isn't any extra allocation that happens, since the VAO can
-still be allocated at the beginning, it just can't be configured on pipeline creation).
+still be allocated at the beginning, it just can't be configured on pipeline creation).</p>
 
-## Conclusion
+<h2> Conclusion</h2>
 The OpenGL backend is now fairly stable and works well enough to run in a web browser
 (compiled to web assembly with Emscripten). You can see a live demo of the GUI system
-running through the OpenGL backend on the [page for corrosion](corrosion.html).
+running through the OpenGL backend on the <a href="corrosion.html">page for corrosion</a>.
 Desktop applications can seamlessly switch backends with no changes to the application
 code (so long as they aren't using compute shaders!). While rather challenging to
 implement, I consider this sub-project a success and worth the effort to have the
 possibility of compiling anything I make with Corrosion for a web browser for ease
 of distribution on sites such as itch.io.
 
-There are still bugs and unimplemented features in the Emscripten platform implementation
-(such as the file-system API), but they're unrelated to the OpenGL backend.
+<p>There are still bugs and unimplemented features in the Emscripten platform implementation
+(such as the file-system API), but they're unrelated to the OpenGL backend.</p>
+</body>
+</html>
