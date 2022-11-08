@@ -11,13 +11,27 @@ body {
 	max-width: 650px;
 	line-height: 1.6;
 	font-size: 18px;
-	color: #444;
-}
-
-body {
+	background-color: #1a1a1a;
+	color: #d6d6d6;
 	margin: auto;
 	width: 50%;
 	padding: 0 10px;
+}
+
+a {
+	color: #d6d6d6;
+	background-color: #1a1a1a;
+}
+
+a:hover {
+	color: #1a1a1a;
+	background-color: #d6d6d6;
+}
+
+code {
+	color: #bababa;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 @media screen and (max-width:900px) {
@@ -82,12 +96,6 @@ div.desc {
   clear: both;
 }
 
-code {
-	font-weight: bold;
-	color: #000000;
-	font-size: 14px;
-}
-
 pre {
 	line-height: 1;
 }
@@ -97,35 +105,8 @@ img {
 	border-radius: 5px;
 }
 
-a {
-	color: #444;
-	background-color: white;
-}
-
-a:hover {
-	color: white;
-	background-color: #444;
-}
-
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #1a1a1a;
-		color: #d6d6d6;
-	}
 
-	a {
-		color: #d6d6d6;
-		background-color: #1a1a1a;
-	}
-
-	a:hover {
-		color: #1a1a1a;
-		background-color: #d6d6d6;
-	}
-
-	code {
-		color: #bababa;
-	}
 }
 </style>
 </head>
