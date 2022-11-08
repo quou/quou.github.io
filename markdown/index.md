@@ -118,4 +118,5 @@ I'm currently working on:
  - [Quo](quo.html) (Jun 2021) - A minimalist, single-header C library, intended for use in game programming
 
 ## Writing
+ - [Vulkan-Style Pipeline Objects in OpenGL](glpip.html) (Nov 2022)
  - [Scripting Interpreters](scrinterp.html) (Feb 2022)
