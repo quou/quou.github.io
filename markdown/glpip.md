@@ -69,14 +69,15 @@ The first step to supporting descriptor is in the shader compiler. The shader co
 process looks like this:
  - Compile shaders to SPIR-V bytecode from GLSL.
  - Use SPIRV-Cross to cross-compile the SPIR-V bytecode into OpenGL GLSL (since the
-   target version of OpenGL doesn't support directly loading SPIR-V, that's a 4.6 feature
-   and I'm targeting version 3.3 on desktop or ES 3.0 on the web). At this step,
+   target version of OpenGL doesn't support directly loading SPIR-V). At this step,
    binding locations are re-mapped for uniform buffers such that locations are spaced out
    to allow for emulation of descriptor sets and binding locations are saved so that
    `glActiveTexture` can be used to bind textures to the correct location.
  - Write the SPIR-V bytecode, the OpenGL GLSL code as well as some meta-data for OpenGL
    (binding locations, etc.) to a unified file in the CSH format (A format I made
    specifically for this).
+
+![image](media/glpip2.png)
 
 The `bind_pipeline_descriptor_set` function takes a pointer to a Corrosion pipeline, a
 null-terminated string for the name of the descriptor set and a target index where the
@@ -101,7 +102,7 @@ this, the shader compiler generates an incremental bind location for samplers, t
 hash table lookup is used to convert the re-mapped location to get said generated location.
 
 ## Vertex Attributes
-Vulkan has vertex attributes as part of the pipelines, and so does Corrosion (begin a
+Vulkan has vertex attributes as part of the pipelines, and so does Corrosion (being a
 thin-ish wrapper). OpenGL, however, uses a Vertex Array Object (VAO) to describe the
 relationship between raw data and the vertex shader inputs. My first inclination was to
 have a VAO attached to each pipeline that gets set up on pipeline creation (calling
@@ -113,8 +114,7 @@ Vertex buffers are separate objects to pipelines where vertex attributes are con
 
 In OpenGL 4.3, the functions `glBindVertexBuffer` and `glVertexBindingDivisor` were
 added, which allow vertex buffers to be separate from VAOs. However, I cannot use
-these functions since I'm targeting OpenGL ES 3.0 for Emscripten, where they are not
-supported.
+these functions since I'm targeting OpenGL ES 3.0.
 
 What I had to do instead was create a VAO as part of the pipeline, but instead of
 configuring it on every binding, it's configured in the `bind_vertex_buffer` function,
